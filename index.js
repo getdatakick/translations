@@ -15,11 +15,6 @@ module.exports = {
           s = s.replace('%s', repl);
         }
       }
-      if (! process.env.production) {
-        if (s && s.indexOf('%') > 0) {
-          console.error('Missing parameter to translation: '+s);
-        }
-      }
       return s;
     }
   }
