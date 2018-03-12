@@ -3,10 +3,10 @@ var translations = {
 var lang = null;
 
 module.exports = {
-  setTranslation: function(tt, l='DEFAULT') {
+  setTranslation: function(tt, l) {
     translations[l] = tt;
-    if (lang === null) {
-       lang = l;
+    if (!lang) {
+       lang = (l || 'DEFAULT');
     }
   },
   setLanguage: function(l) {
