@@ -1,12 +1,21 @@
-var t = null;
+var translations = {
+};
+var lang = null;
 
 module.exports = {
-  setTranslation: function(tt) {
-    t = tt;
+  setTranslation: function(tt, l='DEFAULT') {
+    translations[l] = tt;
+    if (lang === null) {
+       lang = l;
+    }
+  },
+  setLanguage: function(l) {
+    lang = l;
   },
   getTranslation: function() {
     var length = arguments.length;
     if (length > 0) {
+      var t = translations[lang];
       var s = arguments[0];
       s = (t && t[s]) ? t[s] : s;
       if (s && length > 1) {
