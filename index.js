@@ -4,9 +4,10 @@ var lang = null;
 
 module.exports = {
   setTranslation: function(tt, l) {
+    l = l || 'DEFAULT';
     translations[l] = tt;
     if (!lang) {
-       lang = (l || 'DEFAULT');
+       lang = l;
     }
   },
   setLanguage: function(l) {
